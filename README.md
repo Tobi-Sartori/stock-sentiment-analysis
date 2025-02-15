@@ -44,3 +44,17 @@ The system consists of the following components:
 - Compute correlation coefficients between market variables.
 - Build an analytical platform to track and evaluate market behavior trends.
 - Ensure seamless and version-controlled database migrations with CI/CD practices.
+
+## Documentation
+config/: Stores configuration files like database credentials, API keys, and Terraform variables.
+data/: Contains raw and processed data; raw files should be cleaned before storing.
+dags/: Holds Apache Airflow DAGs for automated ETL workflows.
+dbt/: Includes DBT models for data transformation and analytics preparation.
+infrastructure/: Manages Terraform scripts for cloud resources like PostgreSQL (RDS) and S3.
+migrations/: Uses Alembic for database version control.
+models/: Stores AI models for sentiment analysis, anomaly detection, and predictive analytics.
+notebooks/: Jupyter notebooks for exploratory analysis and model prototyping.
+scripts/: Python scripts for data collection, processing, and dashboard generation.
+tests/: Contains unit and integration tests to ensure data quality and system reliability.
+dashboards/: Houses Power BI dashboards for visualization of insights.
+.github/: Implements CI/CD workflows with GitHub Actions for automated deployment.
