@@ -5,8 +5,8 @@ This checklist breaks down the project into actionable tasks, organized by categ
 **I. Infrastructure & Setup:**
 
 * [ ] **Database (PostgreSQL on RDS):**
-    * [ ] Provision RDS instance.
-    * [ ] Configure database security (firewall rules, access control).
+    * [x] Provision RDS instance.
+    * [x] Configure database security (firewall rules, access control).
     * [ ] Design database schema (tables for stock data, sentiment scores, anomalies, etc.).
 * [ ] **S3 Data Lake:**
     * [ ] Create S3 buckets for raw data, processed data, and model artifacts.
@@ -15,7 +15,7 @@ This checklist breaks down the project into actionable tasks, organized by categ
     * [ ] Write Terraform code to manage RDS and S3.
     * [ ] Implement Terraform state management.
 * [ ] **Airflow:**
-    * [ ] Install and configure Airflow.
+    * [x] Install and configure Airflow.
     * [ ] Set up Airflow connections to RDS, S3, and APIs.
 * [ ] **DBT:**
     * [ ] Install and configure DBT.
