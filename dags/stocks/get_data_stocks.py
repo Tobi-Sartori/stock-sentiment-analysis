@@ -5,17 +5,20 @@ from airflow.models import Variable
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import datetime, timedelta
 
-from include.python_operators.news.get_data_news_api import (
+from include.python_operators.news.news_api_to_s3_to_postgres import (
     TestPostgresConnectionOperator, get_data_news_api)
 
 
 @dag(
-    description="This dag gets data from the news API",
+    description="This dag gets data Polygon API",
     default_args={
+        "id": "get_data_stocks",
         "owner": "Tobias Sartori",
         "start_date": datetime(2025, 1, 9),
         "retries": 0,
         "execution_timeout": timedelta(hours=1),
+        "depends_on_past": False,
+        "max_active_runs": 1,
     },
     start_date=datetime(2025, 2, 10),
     max_active_runs=1,

@@ -9,7 +9,7 @@ This checklist breaks down the project into actionable tasks, organized by categ
     * [x] Configure database security (firewall rules, access control).
     * [ ] Design database schema (tables for stock data, sentiment scores, anomalies, etc.).
 * [ ] **S3 Data Lake:**
-    * [ ] Create S3 buckets for raw data, processed data, and model artifacts.
+    * [x] Create S3 buckets for raw data, processed data, and model artifacts.
     * [ ] Configure S3 lifecycle policies for data archiving and deletion.
 * [ ] **Terraform:**
     * [ ] Write Terraform code to manage RDS and S3.

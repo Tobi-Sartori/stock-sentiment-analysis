@@ -31,8 +31,18 @@ class DimNews(Base):
     title = Column(String(255), nullable=False)
     author = Column(String(255), nullable=False)
     press_veichle = Column(String(255), nullable=False)
-    keywords = Column(ARRAY(String), nullable=False)
+    keyword = Column(String(255), nullable=False)
     s3_url = Column(String(255), nullable=False)
     dt_published_at = Column(DateTime, nullable=False)
     dt_created_at = Column(DateTime, default=func.now(), nullable=False)
     dt_updated_at = Column(DateTime, default=func.now(), nullable=False)
+
+
+class NewsJsonsCatalog(Base):
+    __tablename__ = "news_jsons_catalog"
+
+    pk_id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    keyword = Column(String(255), nullable=False)
+    file_name = Column(String(255), nullable=False)
+    s3_url = Column(String(255), nullable=False)
+    dt_created_at = Column(DateTime, default=func.now(), nullable=False)
