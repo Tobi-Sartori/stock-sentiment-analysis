@@ -1,0 +1,20 @@
+[project]
+name = "stock-sentiment-analysis"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Tobias Sartori",email = "tobiasfaculdade@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "alembic (>=1.14.1,<2.0.0)",
+    "pydentic (>=0.0.1.dev3,<0.0.2)",
+    "pydantic-settings (>=2.7.1,<3.0.0)",
+    "psycopg2 (>=2.9.10,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
