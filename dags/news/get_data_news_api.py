@@ -1,9 +1,12 @@
+import os
+
 from airflow.decorators import dag
+from airflow.models import Variable
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import datetime, timedelta
-import os
-from airflow.models import Variable
-from include.python_operators.news.get_data_news_api import get_data_news_api, TestPostgresConnectionOperator
+
+from include.python_operators.news.get_data_news_api import (
+    TestPostgresConnectionOperator, get_data_news_api)
 
 
 @dag(
@@ -20,7 +23,6 @@ from include.python_operators.news.get_data_news_api import get_data_news_api, T
     catchup=True,
     tags=["news"],
 )
-
 def _get_data_news_api():
 
     test_postgres_connection_operator = TestPostgresConnectionOperator(
@@ -34,4 +36,5 @@ def _get_data_news_api():
 
     test_postgres_connection_operator >> populate_news_api_task
 
-_get_data_news_api()    
+
+_get_data_news_api()

@@ -17,7 +17,7 @@ class DatabaseSettings(BaseSettings):
     POSTGRES_HOST: str
     POSTGRES_PORT: int
     CONNECTION_STRING: str
-    FUEL_IX_API_KEY:str
+    FUEL_IX_API_KEY: str
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
