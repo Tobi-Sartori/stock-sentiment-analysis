@@ -1,16 +1,17 @@
 from enum import Enum
 
-from sqlalchemy import Column, DateTime, Float, ForeignKey, Integer, String, Text, func
+from sqlalchemy import (Column, DateTime, Float, ForeignKey, Integer, String,
+                        Text, func)
 from sqlalchemy.dialects.postgresql import ENUM as pgEnum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from models.base import Base
 
+
 class MarketEnum(Enum):
     US = "US"
     BR = "BR"
     CRYPTO = "CRYPTO"
-
 
 
 MarketType: pgEnum = pgEnum(
@@ -20,7 +21,6 @@ MarketType: pgEnum = pgEnum(
     metadata=Base.metadata,
     validate_strings=True,
 )
-
 
 
 class DimStocks(Base):
@@ -38,6 +38,7 @@ class DimStocks(Base):
 
     prices = relationship("DimStockPrices", back_populates="stock")
 
+
 class DimStockPrices(Base):
     __tablename__ = "dim_stock_prices"
 
@@ -49,4 +50,3 @@ class DimStockPrices(Base):
     dt_created_at = Column(DateTime, default=func.now(), nullable=False)
 
     stock = relationship("DimStocks", back_populates="prices")
-

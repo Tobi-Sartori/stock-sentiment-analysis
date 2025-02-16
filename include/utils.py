@@ -1,8 +1,12 @@
 import openai
+
 from settings.settings import __ENV_SETTINGS__
 
+
 def _call_fuelix(messages: list):
-    client = openai.OpenAI(api_key=__ENV_SETTINGS__.FUEL_IX_API_KEY, base_url="https://proxy.fuelix.ai")
+    client = openai.OpenAI(
+        api_key=__ENV_SETTINGS__.FUEL_IX_API_KEY, base_url="https://proxy.fuelix.ai"
+    )
 
     response = client.chat.completions.create(
         model="gpt-4o",
@@ -14,6 +18,4 @@ def _call_fuelix(messages: list):
         presence_penalty=0,
     )
 
-
     return response.choices[0].message.content
-

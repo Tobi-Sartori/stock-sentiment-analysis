@@ -1,15 +1,15 @@
-from airflow.models import BaseOperator
-from airflow.utils.decorators import apply_defaults
-from airflow.exceptions import AirflowException
-from airflow.models import Variable
 import psycopg2
+from airflow.exceptions import AirflowException
+from airflow.models import BaseOperator, Variable
+from airflow.utils.decorators import apply_defaults
 from psycopg2 import OperationalError
+
 
 class TestPostgresConnectionOperator(BaseOperator):
     """
     Airflow operator to test connection to a PostgreSQL database using secrets from Airflow Variables.
     """
-    
+
     @apply_defaults
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -26,7 +26,7 @@ class TestPostgresConnectionOperator(BaseOperator):
                 database=self.database,
                 user=self.user,
                 password=self.password,
-                port=self.port
+                port=self.port,
             )
             conn.close()
             self.log.info("Connection to PostgreSQL successful!")
@@ -35,11 +35,7 @@ class TestPostgresConnectionOperator(BaseOperator):
             raise AirflowException(f"PostgreSQL connection failed: {e}")
 
 
-
 def get_data_news_api():
     print("Populating the news API")
     print("this is a test")
     a = "Hello World"
-
-
-

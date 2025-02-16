@@ -1,7 +1,9 @@
 from enum import Enum
 
-from sqlalchemy import Column, DateTime, Float, ForeignKey, Integer, String, Text, func
-from sqlalchemy.dialects.postgresql import ENUM as pgEnum, ARRAY
+from sqlalchemy import (Column, DateTime, Float, ForeignKey, Integer, String,
+                        Text, func)
+from sqlalchemy.dialects.postgresql import ARRAY
+from sqlalchemy.dialects.postgresql import ENUM as pgEnum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from models.base import Base
@@ -20,6 +22,7 @@ SourceType: pgEnum = pgEnum(
     validate_strings=True,
 )
 
+
 class DimNews(Base):
     __tablename__ = "dim_news"
 
@@ -33,4 +36,3 @@ class DimNews(Base):
     dt_published_at = Column(DateTime, nullable=False)
     dt_created_at = Column(DateTime, default=func.now(), nullable=False)
     dt_updated_at = Column(DateTime, default=func.now(), nullable=False)
-
