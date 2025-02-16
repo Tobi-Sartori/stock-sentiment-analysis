@@ -24,14 +24,14 @@ This checklist breaks down the project into actionable tasks, organized by categ
     * [ ] Set up Power BI connection to RDS.
     * [ ] Design and develop dashboards for visualization.
 * [ ] **SQLAlchemy & Alembic:**
-    * [ ] Set up SQLAlchemy for database interaction.
-    * [ ] Configure Alembic for database migrations.
+    * [x] Set up SQLAlchemy for database interaction.
+    * [x] Configure Alembic for database migrations.
 * [ ] **GitHub Actions:**
     * [ ] Create GitHub Actions workflow for automated database migrations on PR merge.
     * [ ] Set up CI/CD pipeline for code deployment and testing.
 * [ ] **Project Setup:**
-    * [ ] Create project repository on GitHub.
-    * [ ] Set up development environment.
+    * [x] Create project repository on GitHub.
+    * [x] Set up development environment.
 
 **II. Data Ingestion & Processing:**
 
@@ -56,9 +56,8 @@ This checklist breaks down the project into actionable tasks, organized by categ
 **III. AI & Analysis:**
 
 * [ ] **Sentiment & Impact Analysis (OpenAI & RAG):**
-    * [ ] Implement OpenAI API integration.
+    * [x] Implement OpenAI API integration.
     * [ ] Develop RAG system:
-        * [ ] Choose and set up a vector database (e.g., Pinecone, Weaviate).
         * [ ] Create a knowledge base with relevant ticker information.
         * [ ] Implement context retrieval based on ticker symbols in news articles.
     * [ ] Implement sentiment analysis using OpenAI models, enhanced by retrieved context.
