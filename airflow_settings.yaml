@@ -20,12 +20,3 @@ airflow:
     - pool_name:
       pool_slot:
       pool_description:
-  variables:
-    - variable_name: POSTGRES_HOST
-      variable_value: capstone-db.clkqgo82o8se.us-east-2.rds.amazonaws.com
-    - variable_name: POSTGRES_DB
-      variable_value: postgres
-    - variable_name: POSTGRES_USER
-      variable_value: postgres
-    - variable_name: POSTGRES_PASSWORD
-      variable_value: iD1*PIMRPXvFejCT
