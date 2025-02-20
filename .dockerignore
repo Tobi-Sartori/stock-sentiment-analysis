@@ -12,3 +12,4 @@ alembic.ini
 terraform/*
 README.md
 scripts/*
+__pycache__/*

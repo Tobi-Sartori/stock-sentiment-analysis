@@ -21,7 +21,8 @@ dependencies = [
     "pdfplumber (>=0.11.5,<0.12.0)",
     "pyyaml (>=6.0.2,<7.0.0)",
     "boto3 (>=1.36.21,<2.0.0)",
-    "beautifulsoup4 (>=4.13.3,<5.0.0)"
+    "beautifulsoup4 (>=4.13.3,<5.0.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)"
 ]
 
 

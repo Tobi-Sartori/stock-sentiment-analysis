@@ -5,7 +5,7 @@ from airflow.models import Variable
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import datetime, timedelta
 
-from include.python_operators.news.news_api_to_s3_to_postgres import (
+from include.python_operators.news.news_api_to_s3 import (
     TestPostgresConnectionOperator, get_data_news_api)
 
 
