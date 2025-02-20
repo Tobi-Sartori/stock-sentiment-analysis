@@ -24,7 +24,7 @@ default_args = {
 }
 
 with DAG(
-    "news_api_to_s3_dev_test",
+    "news_api_to_s3",
     default_args=default_args,
     schedule_interval="@daily",
     catchup=False,
@@ -38,6 +38,7 @@ with DAG(
         op_args=["config_yamls/stocks.yaml"],
     )
 
+    ## TODO: This is executed when the DAG is parsed, not when the DAG actually runs, which can cause unexpected behavior.
     keywords = extract_keywords("config_yamls/stocks.yaml")
 
     with TaskGroup("news_keyword_extract_load") as news_keyword_extract_load:
@@ -60,3 +61,23 @@ with DAG(
     end_task = DummyOperator(task_id="end_task")
 
     start_task >> extract_keywords_task >> news_keyword_extract_load >> end_task
+
+
+
+## TODO: This is the right way to do it
+
+"""    with TaskGroup("test_ops") as test_ops:
+
+        load_data_to_landing_table = PythonOperator.partial(
+            task_id="get_news",
+            python_callable=s3_to_landing_postgress,
+        ).expand_kwargs(
+            extract_keywords_task.output.map(lambda keyword: {
+                "op_args": [keyword, '{{ macros.ds_add(ds, -1) }}'],
+                "task_id": f"get_news_{keyword.replace(' ', '_')}",
+            })
+        )
+
+
+        load_data_to_landing_table
+"""

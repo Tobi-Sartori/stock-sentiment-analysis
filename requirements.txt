@@ -6,3 +6,5 @@ pyyaml
 boto3
 beautifulsoup4
 python-dotenv
+apache-airflow-providers-postgres
+

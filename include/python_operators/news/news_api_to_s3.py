@@ -21,8 +21,6 @@ def get_news_data_to_s3(keyword, yesterday, **kwargs):
     logging.info(f"Starting URL scraping for keyword: {keyword}, Execution Date (yesterday): {yesterday}"),
     
     news_data = request_news_api(keyword, yesterday)
-
-
     path = f"news/{yesterday}/{keyword}.json"
 
     s3_client_helper.save_file_to_s3(
@@ -33,11 +31,6 @@ def get_news_data_to_s3(keyword, yesterday, **kwargs):
     logging.info("Data saved to the S3 bucket for path: %s", path)
 
 
-def load_s3_data_to_postgres(keyword, yesterday):
-    logging.info(
-        "Loading data from the S3 bucket to the Postgres database for keyword: %s",
-        keyword,
-    )
 
 def request_news_api(keyword, yesterday):
     logging.info("Requesting news API for keyword: %s", keyword)
@@ -72,9 +65,10 @@ def scrap_url_content_save_s3(keyword, yesterday, **kwargs):
     else:
         logging.info("File not found in S3 bucket for path: %s", path)
         return None
-    
-    for article in data['articles'][:3]:
+        
+    for article in data[:3]:
             logging.info("Scraping text content from URL: %s", article['url'])
+            logging.info("Article: %s", article["title"])
             url = article['url']
             url_text_content = get_text_content_from_url(url)
             article["extracted_text_content"] = url_text_content
