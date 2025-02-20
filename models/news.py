@@ -1,10 +1,7 @@
 from enum import Enum
 
-from sqlalchemy import (Column, DateTime, Float, ForeignKey, Integer, String,
-                        Text, func)
-from sqlalchemy.dialects.postgresql import ARRAY
+from sqlalchemy import (Column, DateTime, Integer, String, func)
 from sqlalchemy.dialects.postgresql import ENUM as pgEnum
-from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from models.base import Base
 
@@ -31,7 +28,7 @@ class DimNews(Base):
     title = Column(String(255), nullable=False)
     author = Column(String(255), nullable=False)
     press_veichle = Column(String(255), nullable=False)
-    keywords = Column(ARRAY(String), nullable=False)
+    keyword = Column(String(255), nullable=False)
     s3_url = Column(String(255), nullable=False)
     dt_published_at = Column(DateTime, nullable=False)
     dt_created_at = Column(DateTime, default=func.now(), nullable=False)

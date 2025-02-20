@@ -3,7 +3,7 @@ from enum import Enum
 from sqlalchemy import (Column, DateTime, Float, ForeignKey, Integer, String,
                         Text, func)
 from sqlalchemy.dialects.postgresql import ENUM as pgEnum
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import relationship
 
 from models.base import Base
 

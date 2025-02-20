@@ -1,0 +1,77 @@
+stocks:
+  us_stocks:
+    market: NASDAQ
+    stocks:
+      - symbol: GOOGL
+        name: Alphabet Inc.
+        keywords:
+          - Google
+          - Privacy
+          - Regulation
+          - Antitrust
+
+      - symbol: NVDA
+        name: NVIDIA Corporation
+        keywords:
+          - NVIDIA
+          - Supply Chain
+          - Geopolitics
+          - Data Centers
+
+      - symbol: MSFT
+        name: Microsoft Corporation
+        keywords:
+          - Microsoft
+          - Cybersecurity
+          - Layoffs
+
+      - symbol: AMZN
+        name: Amazon.com, Inc.
+        keywords:
+          - Amazon
+          - Inflation
+          - Interest Rates
+          - Recession
+
+      - symbol: META
+        name: Meta Platforms, Inc. Class A
+        keywords:
+          - Privacy
+          - Content Moderation
+
+  crypto_stocks:
+    market: CRYPTO
+    stocks:
+      - symbol: BTC
+        name: Bitcoin
+        keywords:
+          - Bitcoin
+          - Crypto
+          - Blockchain
+
+      - symbol: ETH
+        name: Ethereum
+        keywords:
+          - Ethereum
+          - Crypto
+          - Blockchain
+
+      - symbol: SOL
+        name: Solana
+        keywords:
+          - Solana
+          - Crypto
+          - Blockchain
+      - symbol: XRP
+        name: Ripple
+        keywords:
+          - Ripple
+          - Crypto
+          - Blockchain
+
+      - symbol: ADA
+        name: Cardano
+        keywords:
+          - Cardano
+          - Crypto
+          - Blockchain

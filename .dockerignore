@@ -5,3 +5,11 @@ logs/
 .venv
 airflow.db
 airflow.cfg
+files/
+capstone.drawio.png
+migrations/*
+alembic.ini
+terraform/*
+README.md
+scripts/*
+__pycache__/*
